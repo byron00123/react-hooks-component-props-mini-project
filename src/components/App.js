@@ -1,13 +1,36 @@
 import React from "react";
-import blogData from "../data/blog";
-
-console.log(blogData);
+import Header from "./Header";
+import About from "./About";
+import ArticleList from "./ArticleList";
 
 function App() {
+  // Example post data
+  const posts = [
+    {
+      id: 1,
+      title: "The WET Codebase",
+      content: "Lorem ipsum dolor sit amet...",
+    },
+    {
+      id: 2,
+      title: "Goodbye, Clean Code",
+      content: "Lorem ipsum dolor sit amet...",
+    },
+    {
+      id: 3,
+      title: "My Decade in Review",
+      content: "Lorem ipsum dolor sit amet...",
+    },
+  ];
+
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div>
+      <Header blogName="Overracted" />
+      <About
+        imageUrl="https://example.com/my-image.jpg"
+        aboutText={`Personal blog by Dan Abramov.\nI explain with words and code.`}
+      />
+      <ArticleList posts={posts} />
     </div>
   );
 }
